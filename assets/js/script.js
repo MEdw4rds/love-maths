@@ -23,6 +23,16 @@ function runGame(gameType) {
 
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
+
+    } else  if (gameType === "subtract") {
+        displaySubtractQuestion(num1, num2);
+
+    } else  if (gameType === "multiply") {
+        displayMultiplyQuestion(num1, num2);
+
+    } else  if (gameType === "division") {
+        displayDivideQuestion(num1, num2);
+
     } else {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
@@ -54,9 +64,16 @@ function calculateCorrectAnswer() {
 
     if (operator === "+") {
         return [operand1 + operand2, "addition"];
-    } else {}
+    } else if(operator === "-") {
+        return [operand1 - operand2, "subtract"];
+    }  else if(operator === "x") {
+        return [operand1 * operand2, "multiply"];
+    } else if(operator === "/") {
+        return [operand1 / operand2, "division"];
+    } else {
     alert(`Uninplemented operator ${operator}`);
     throw (`Uninplemented operator ${operator}. Aborting!`);
+    }
 }
 
 function incrementScore() {
@@ -80,10 +97,26 @@ function displayAdditionQuestion(operand1, operand2) {
 
 }
 
-function displaySubtractQuestion() {
+function displaySubtractQuestion(operand1, operand2) {
+
+    document.querySelector("#operand1").textContent = operand1 > operand2 ? operand1 : operand2;
+    document.querySelector("#operand2").textContent = operand1 > operand2 ? operand2 : operand1;
+    document.querySelector("#operator").textContent = "-";
 
 }
 
-function displayMultiplyQuestion() {
+function displayMultiplyQuestion(operand1, operand2) {
+
+    document.querySelector("#operand1").textContent = operand1 > operand2 ? operand1 : operand2;
+    document.querySelector("#operand2").textContent = operand1 > operand2 ? operand2 : operand1;
+    document.querySelector("#operator").textContent = "x";
+
+}
+
+function displayDivideQuestion(operand1, operand2) {
+
+    document.querySelector("#operand1").textContent = operand1;
+    document.querySelector("#operand2").textContent = operand2;
+    document.querySelector("#operator").textContent = "/";
 
 }
