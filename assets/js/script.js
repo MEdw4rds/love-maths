@@ -116,16 +116,16 @@ function displaySubtractQuestion(operand1, operand2) {
 
 function displayMultiplyQuestion(operand1, operand2) {
 
-    document.querySelector("#operand1").textContent = operand1 > operand2 ? operand1 : operand2;
-    document.querySelector("#operand2").textContent = operand1 > operand2 ? operand2 : operand1;
+    document.querySelector("#operand1").textContent = operand1;
+    document.querySelector("#operand2").textContent = operand2;
     document.querySelector("#operator").textContent = "x";
 
 }
 
 function displayDivideQuestion(operand1, operand2) {
 
-    document.querySelector("#operand1").textContent = operand1;
-    document.querySelector("#operand2").textContent = operand2;
+    document.querySelector("#operand1").textContent = operand1 = operand1 * operand2;
+    document.querySelector("#operand2").textContent = operand1 > operand2 ? operand2 : operand1;
     document.querySelector("#operator").textContent = "/";
 
 }
