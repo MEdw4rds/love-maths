@@ -12,11 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    document.querySelector("#answer-box").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    })
+
     runGame("addition");
 
 });
 
 function runGame(gameType) {
+
+    document.querySelector("#answer-box").value = "";
+    document.querySelector("#answer-box").focus();
 
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
